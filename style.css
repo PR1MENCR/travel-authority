@@ -1,0 +1,124 @@
+.main{
+    width: 100%;
+    /* max-width: 900px; */
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.main .header i{
+    
+}
+.title{
+    margin-bottom: 20px;
+}
+
+.count_wrap{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 60px;
+}
+.count_wrap .counter{
+    border: 2px solid #000;
+    padding: 10px 20px;
+}
+
+.count_wrap .counter .code span{
+    text-decoration: underline;
+    font-weight: 600;
+}
+table, td, th {
+border: 1px solid;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+}
+table tbody tr{
+display: grid;
+grid-template-columns: 240px 1fr;
+/* border: 0.1rem solid #000; */
+}
+table tbody tr td{
+    font-weight: 600;
+}
+table tbody tr .sign{
+    grid-column: 1/3;
+}
+table tbody tr .sign i{
+    font-size: 15px;
+}
+table tbody tr .sign strong{
+    font-size: 15px;
+}
+table tbody tr .sign .sign_wrap{
+    padding: 0 40px;
+    display:  grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 40%;
+    grid-gap: 50px;
+}
+table tbody tr .sign .sign_wrap .line{
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #000;
+    display: flex;
+    align-self: flex-end;
+}
+table tbody tr .sign .sign_wrap span{
+    font-size: 17px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 173px  1fr;
+}
+table tbody tr .sign .sign_wrap p{
+    margin: 0;
+}
+table tbody tr .sign .sign_wrap span{
+    /* background: pink; */
+}
+table tbody tr .sign .sign_wrap .dates{
+    display: flex;
+    align-self: flex-end;
+}
+table tbody tr .sign .sign_wrap span .line{
+    height: auto;
+    background: none;
+    border-bottom: 3px solid #000;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+table tbody tr .sign .sign_wrap span .line .pos{
+    font-size: 14px;
+    font-weight: 500;
+}
+table .bold{
+font-weight: bold;
+font-size: 20px;
+}
+.main h3{
+text-align: center;
+font-size: 25px;
+}
+.btn_wrapp{
+width: 100%;
+max-width: 900px;
+margin: 0 auto;
+}
+.table td, .table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    /* border-top: 0 !important; */
+}
+table tbody tr:nth-child(1){
+    border-top: 1px solid #000;
+}
+/* 
+.table td, .table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: unset;
+} */

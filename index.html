@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./scss/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+  <style>
+    .mainn{
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      height: 100%;      max-height: 100vh;
+      background: rgb(18,40,164);
+      background: linear-gradient(90deg, rgba(18,40,164,1) -1%, rgba(212,161,11,1) 100%, rgba(212,161,11,1) 100%, rgba(212,161,11,1) 100%);
+      background-size: 200% 200%;
+	    animation: gradient 15s ease infinite;
+    }
+    @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 50% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+    .form_container{
+      box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+      border-radius: 5px;
+      background: #fff;
+    }
+  </style>
+  <div id="modal-container">
+    <div class="modal-background">
+      <div class="modal">
+          <div class="wrap">
+            <div class="count_wrap">
+              <div class="counter">
+                <div class="code">No.: <span>number</span></div>
+              </div>
+            </div>
+                <div class="title">
+              <h3>TRAVEL AUTHORITY FOR OFFICIAL TRAVEL</h3>
+            </div>
+            <table id="demo" class="table ">
+              <tbody>
+                <tr>
+                <td class="bold">NAME</td>
+                <td>
+                  NAMES
+                </td>
+                </tr>
+                <tr>
+                <td class="bold">Position/Designation</td>
+                <td>Position/Designation</td>
+                </tr>
+                <tr>
+                <td class="bold">Permanent Station</td>
+                <td>Permanent Station</td>
+                </tr>
+                <tr>
+                <td class="bold">Purpose of Travel</td>
+                <td>Purpose of Travel</td>
+                </tr>
+                <tr>
+                <td class="bold">Host of Activity</td>
+                <td>Host of Activity</td>
+                </tr>
+                <tr>
+                <td class="bold">Inclusive Dates</td>
+                <td>Inclusive Dates</td>
+                </tr>
+                <tr>
+                <td class="bold">Destination</td>
+                <td>Destination</td>
+                </tr>
+                <tr>
+                <td class="bold">Found Source</td>
+                <td>Found Source</td>
+                </tr>
+                <tr>
+                <td class="bold sign">
+                  <i>I hereby attest that the information in this form and in the supporting documents attached hereto are tru and correct</i>
+    
+                  <div class="sign_wrap">
+                    <span>
+                      <div class="line">
+                        <div class="name">
+                          ANGELITA P. CORNEJO
+                        </div>
+                        <div class="pos">
+                          Chief, QAD
+                        </div>
+                      </div> 
+                      Name and Signature of Requesting Employee
+                    </span>	
+                    <span><div class="line">DATE</div> Date</span>	
+                  </div>
+                </td>
+                </tr>
+                <tr>
+                <td class="bold sign">
+                  <i>I hereby attest that the information in this form and in the supporting documents attached hereto are tru and correct</i>
+    
+                  <div class="sign_wrap">
+                    <span>
+                      <div class="line">
+                        <div class="name">
+                          RITA E. RIDDLE, CESO V
+                        </div>
+                        <div class="pos">
+                          Schools Division Superintendent and concurrent Officer-In-Charge Office of the Assistant Regional Director
+                        </div>
+                      </div> 
+                      Name and Signature of Requesting Employee
+                    </span>	
+                    <span><div class="line">DATE</div> Date</span>	
+                  </div>
+                </td>
+                </tr>
+                <tr>
+                <td class="bold sign">
+                  <strong>APPROVED:</strong>
+    
+                  <div class="sign_wrap">
+                    <span>
+                      <div class="line">
+                        <div class="name">
+                          WILFREDO E. CABRAL, CESO III
+                        </div>
+                        <div class="pos">
+                          Schools Division Superintendent and concurrent Officer-In-Charge Office of the Assistant Regional Director
+                        </div>
+                      </div> 
+                      Name and Signature of Requesting Employee
+                    </span>	
+                    <span><div class="line">DATE</div> Date</span>	
+                  </div>
+                </td>
+                </tr>
+            
+          
+              </tbody>
+              </table>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="mainn mb-5">
+  <div class="form_container container mt-5 p-4">
+    <div class="header d-flex align-items-center mb-5">
+      <h3>Travel Authority fill up form</h3>
+      <!-- <div id="five" class="button btn">Meep Meep</div> -->
+      <div id="one" class="button preview btn ms-auto d-flex align-items-center">
+        <i  class="fa fa-info-circle button " aria-hidden="true" style="font-size: 30px; color: rgb(0, 132, 255); cursor: pointer;"></i>
+        <p class="m-0 ms-2" style="font-weight:500;">Preview</p>
+      </div>
+    </div>
+      <form id="formsubmit" action="post">
+          <div class="row">
+
+              <div class="mb-3 col-md-6">
+                <label for="exampleInputEmail1" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+              </div>
+              <div class="mb-3 col-md-6">
+                <label for="exampleInputEmail1" class="form-label">Position/Designation</label>
+                <input type="text" class="form-control" id="position" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3 col-md-6">
+                <label for="exampleInputEmail1" class="form-label">Permanent Station</label>
+                <input type="text" class="form-control" id="permanentStation" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3 col-md-6">
+                <label for="exampleInputEmail1" class="form-label">Purpose of Travel</label>
+                <input type="text" class="form-control" id="purpose" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3 col-md-6">
+                <label for="exampleInputEmail1" class="form-label">Host of Activity</label>
+                <input type="text" class="form-control" id="house" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3 col-md-6">
+                <label for="exampleInputEmail1" class="form-label">Inclusive Dates</label>
+                <input type="text" class="form-control" id="inclusive" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3 col-md-6">
+                <label for="exampleInputEmail1" class="form-label">Destination</label>
+                <input type="text" class="form-control" id="destination" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3 col-md-6">
+                <label for="exampleInputEmail1" class="form-label">Fund Source</label>
+                <input type="text" class="form-control" id="funds" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3 col-md-6">
+                <label for="exampleInputEmail1" class="form-label">Date</label>
+                <input type="text" class="form-control" id="date" aria-describedby="emailHelp">
+              </div>
+              <div class="button_container col-md-12 d-flex mt-5 justify-content-center align-items-center">
+                  <button type="submit" class="col-md-6 btn btn-primary">Submit</button>
+
+              </div>
+          </div>
+        </form>
+  </div>
+
+</div>
+    <script>
+      $('.button').click(function(){
+      var buttonId = $(this).attr('id');
+      $('#modal-container').removeAttr('class').addClass(buttonId);
+      $('body').addClass('modal-active');
+    })
+
+    $('#modal-container').click(function(){
+      $(this).addClass('out');
+      $('body').removeClass('modal-active');
+    });
+    </script>
+    <script>
+        const formsubmit = document.querySelector('#formsubmit')
+        formsubmit.addEventListener('submit', (e) => {
+            e.preventDefault();
+            window.sessionStorage.setItem( 'pdfinfo-cached', JSON.stringify({
+                    name: formsubmit['name'].value,
+                    position: formsubmit['position'].value,
+                    permanentStation: formsubmit['permanentStation'].value,
+                    purposeOfTravel: formsubmit['purpose'].value,
+                    hostofact: formsubmit['house'].value,
+                    inclusiveDates: formsubmit['inclusive'].value,
+                    destination: formsubmit['destination'].value,
+                    fundSource: formsubmit['funds'].value,
+                    date: formsubmit['date'].value
+            }));
+            window.location.href = "./result.html"
+            
+        })
+    </script>
+
+</body>
+</html>

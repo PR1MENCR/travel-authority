@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<title>WebStylePress</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="./scss/style.css">
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+		/>
+		<!-- <link rel="stylesheet" href="custom.css" /> -->
+
+		<!-- firebase -->
+		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="container pb-5">
+			<div id="content" class="main">
+		
+			</div>
+
+			<br />
+
+			<!-- <button id="btn-print" class="btn btn-success btn-lg"
+				>Print & Generate PDF</button
+			> -->
+				<div class="btn_wrapp d-flex">
+					<button id="btn-one" class="btn btn-success btn-lg mr-2"
+						>PRINT</button
+					>
+					<button id="btn-two" class="btn btn-success btn-lg mr-2"
+						>EXPORT</button
+					>
+					<button id="btn-back" class="btn btn-primary btn-lg mr-2"
+						>NEW TRAVEL AUTHORITY</button
+					>
+
+					<button id="five" class="button instruction ml-auto btn btn-warning btn-lg">Instruction</button>
+
+				</div>
+
+			<!-- <button id="btn-two" class="btn btn-success btn-lg"
+				>Generate PDF From iFrame</button
+			> -->
+
+			<!-- <iframe
+				id="frame"
+				style="width: 100%; border: 0; height: 0"
+				src="receipt.html"
+			></iframe> -->
+		</div>
+		<div id="modal-container">
+			<div class="modal-background">
+			  <div class="modal">
+				<h3>After download or print, refresh the page to change the number</h3>
+				<svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+										  <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+									  </svg>
+			  </div>
+			</div>
+		  </div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+			integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+
+		<script src="custom.js"></script>
+		<script>
+			var config = {
+			apiKey: "AIzaSyD22Dq5yyUHO9g0fPG0mI8rtILlxDcfPbk",
+			authDomain: "qad-db-counter-948cb.firebaseapp.com",
+			projectId: "qad-db-counter-948cb",
+			storageBucket: "qad-db-counter-948cb.appspot.com",
+			messagingSenderId: "415898996431",
+			appId: "1:415898996431:web:30ff03edcdf5238202f1ba"
+		  };
+  
+		  firebase.initializeApp(config);
+		  const db = firebase.firestore();
+
+  
+		  db.settings({ timestampsInSnapshots: true });
+  
+	  </script>
+		<script>
+			function ready(){
+
+			
+			 var cached = JSON.parse(window.sessionStorage.getItem('pdfinfo-cached'));
+			 const wrap = document.querySelector('.wrap')
+			 function renderResult(doccached){
+				db.collection('pdfcounter').onSnapshot(snapshot => {
+					let changes = snapshot.docChanges();
+					changes.forEach(change => {
+						if(change.type == 'added'){
+                      	  renderReservation(change.doc)
+						}
+					})
+				})
+				function renderReservation(doc){
+					const number = doc.data().count;
+					const str = JSON.stringify(number);
+					var n = "1234567899";
+					// console.log(typeof(number))
+					// console.log(str.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3"));
+			
+
+				const main = document.querySelector('.main')
+				let div = document.createElement('div')
+				div.classList.add('wrap')
+
+				let divHTML = `
+				<div class="count_wrap">
+					<div class="counter">
+						<div class="code">No.: <span>${doc.data().count}</span></div>
+					</div>
+				</div>
+						<div class="title">
+					<h3>TRAVEL AUTHORITY FOR OFFICIAL TRAVEL</h3>
+				</div>
+				<table id="demo" class="table ">
+					<tbody>
+					  <tr>
+						<td class="bold">NAME</td>
+						<td>
+							${doccached.name}
+						</td>
+					  </tr>
+					  <tr>
+						<td class="bold">Position/Designation</td>
+						<td>${doccached.position}</td>
+					  </tr>
+					  <tr>
+						<td class="bold">Permanent Station</td>
+						<td>${doccached.permanentStation}</td>
+					  </tr>
+					  <tr>
+						<td class="bold">Purpose of Travel</td>
+						<td>${doccached.purposeOfTravel}</td>
+					  </tr>
+					  <tr>
+						<td class="bold">Host of Activity</td>
+						<td>${doccached.hostofact}</td>
+					  </tr>
+					  <tr>
+						<td class="bold">Inclusive Dates</td>
+						<td>${doccached.inclusiveDates}</td>
+					  </tr>
+					  <tr>
+						<td class="bold">Destination</td>
+						<td>${doccached.destination}</td>
+					  </tr>
+					  <tr>
+						<td class="bold">Found Source</td>
+						<td>${doccached.fundSource}</td>
+					  </tr>
+					  <tr>
+						<td class="bold sign">
+							<i>I hereby attest that the information in this form and in the supporting documents attached hereto are tru and correct</i>
+
+							<div class="sign_wrap">
+								<span>
+									<div class="line">
+										<div class="name">
+											ANGELITA P. CORNEJO
+										</div>
+										<div class="pos">
+											Chief, QAD
+										</div>
+									</div> 
+									Name and Signature of Requesting Employee
+								</span>	
+								<span><div class="line">${doccached.date}</div> Date</span>	
+							</div>
+						</td>
+					  </tr>
+					  <tr>
+						<td class="bold sign">
+							<i>I hereby attest that the information in this form and in the supporting documents attached hereto are tru and correct</i>
+
+							<div class="sign_wrap">
+								<span>
+									<div class="line">
+										<div class="name">
+											RITA E. RIDDLE, CESO V
+										</div>
+										<div class="pos">
+											Schools Division Superintendent and concurrent Officer-In-Charge Office of the Assistant Regional Director
+										</div>
+									</div> 
+									Name and Signature of Requesting Employee
+								</span>	
+								<span><div class="line">${doccached.date}</div> Date</span>	
+							</div>
+						</td>
+					  </tr>
+					  <tr>
+						<td class="bold sign">
+							<strong>APPROVED:</strong>
+
+							<div class="sign_wrap">
+								<span>
+									<div class="line">
+										<div class="name">
+											WILFREDO E. CABRAL, CESO III
+										</div>
+										<div class="pos">
+											Schools Division Superintendent and concurrent Officer-In-Charge Office of the Assistant Regional Director
+										</div>
+									</div> 
+									Name and Signature of Requesting Employee
+								</span>	
+								<span><div class="line">${doccached.date}</div> Date</span>	
+							</div>
+						</td>
+					  </tr>
+				
+			
+					</tbody>
+				  </table>
+				`
+				  div.innerHTML = divHTML;
+				  main.appendChild(div)
+				// console.log(doc)
+				}
+			 }
+
+			 if(!cached){
+				return
+				renderResult(cached)
+			}else{
+
+				renderResult(cached)
+			}
+			}
+			ready();
+		</script>
+		<script src="./app.js"></script>
+		<script>
+			$('.button').click(function(){
+			var buttonId = $(this).attr('id');
+			$('#modal-container').removeAttr('class').addClass(buttonId);
+			$('body').addClass('modal-active');
+		  })
+	  
+		  $('#modal-container').click(function(){
+			$(this).addClass('out');
+			$('body').removeClass('modal-active');
+		  });
+		  </script>
+	</body>
+</html>
+
