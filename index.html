@@ -72,37 +72,37 @@
               <tbody>
                 <tr>
                 <td class="bold">NAME</td>
-                <td>
-                  NAMES
+                <td class="names">
+                  
                 </td>
                 </tr>
                 <tr>
                 <td class="bold">Position/Designation</td>
-                <td>Position/Designation</td>
+                <td class="pos">Position/Designation</td>
                 </tr>
                 <tr>
                 <td class="bold">Permanent Station</td>
-                <td>Permanent Station</td>
+                <td class="permanentStation">Permanent Station</td>
                 </tr>
                 <tr>
                 <td class="bold">Purpose of Travel</td>
-                <td>Purpose of Travel</td>
+                <td class="purpose">Purpose of Travel</td>
                 </tr>
                 <tr>
                 <td class="bold">Host of Activity</td>
-                <td>Host of Activity</td>
+                <td class="house"></td>
                 </tr>
                 <tr>
                 <td class="bold">Inclusive Dates</td>
-                <td>Inclusive Dates</td>
+                <td class="inclusive"></td>
                 </tr>
                 <tr>
                 <td class="bold">Destination</td>
-                <td>Destination</td>
+                <td class="destination"></td>
                 </tr>
                 <tr>
                 <td class="bold">Found Source</td>
-                <td>Found Source</td>
+                <td class="fund"></td>
                 </tr>
                 <tr>
                 <td class="bold sign">
@@ -120,7 +120,7 @@
                       </div> 
                       Name and Signature of Requesting Employee
                     </span>	
-                    <span><div class="line">DATE</div> Date</span>	
+                    <span><div class="line date"></div> Date</span>	
                   </div>
                 </td>
                 </tr>
@@ -140,7 +140,7 @@
                       </div> 
                       Name and Signature of Requesting Employee
                     </span>	
-                    <span><div class="line">DATE</div> Date</span>	
+                    <span><div class="line date"></div> Date</span>	
                   </div>
                 </td>
                 </tr>
@@ -160,7 +160,7 @@
                       </div> 
                       Name and Signature of Requesting Employee
                     </span>	
-                    <span><div class="line">DATE</div> Date</span>	
+                    <span><div class="line date"></div> Date</span>	
                   </div>
                 </td>
                 </tr>
@@ -246,7 +246,33 @@
     });
     </script>
     <script>
+
         const formsubmit = document.querySelector('#formsubmit')
+        const preview = document.querySelector('.preview')
+
+        preview.addEventListener('click', () => {
+          document.querySelector('.names').innerHTML = formsubmit['name'].value
+          document.querySelector('.pos').innerHTML = formsubmit['position'].value
+          document.querySelector('.permanentStation').innerHTML = formsubmit['permanentStation'].value
+          document.querySelector('.purpose').innerHTML = formsubmit['purpose'].value
+          document.querySelector('.house').innerHTML = formsubmit['house'].value
+          document.querySelector('.inclusive').innerHTML = formsubmit['inclusive'].value
+          document.querySelector('.destination').innerHTML = formsubmit['destination'].value
+          document.querySelector('.fund').innerHTML = formsubmit['funds'].value
+          document.querySelectorAll('.date').forEach(i => {
+            i.innerHTML = formsubmit['date'].value
+          })
+          
+          
+
+
+        })
+        
+
+
+
+
+
         formsubmit.addEventListener('submit', (e) => {
             e.preventDefault();
             window.sessionStorage.setItem( 'pdfinfo-cached', JSON.stringify({
