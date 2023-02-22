@@ -109,6 +109,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.querySelector('#btn-back').addEventListener('click', () => {
 		window.location.href = './index.html'
 	})
+	document.querySelector('#btn-edit').addEventListener('click', () => {
+		window.location.href = './index.html'
+	})
 	//////////////
 	//////////////
 	// document.querySelector('#btn-two').addEventListener('click', function () {

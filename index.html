@@ -18,8 +18,9 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-
-      height: 100%;      max-height: 100vh;
+      min-height: 100vh;
+/*       
+            height: 100%;      */
       background: rgb(18,40,164);
       background: linear-gradient(90deg, rgba(18,40,164,1) -1%, rgba(212,161,11,1) 100%, rgba(212,161,11,1) 100%, rgba(212,161,11,1) 100%);
       background-size: 200% 200%;
@@ -55,12 +56,29 @@
   background-color: rgb(58, 55, 255);
   outline: 1px solid rgb(8, 40, 180);
 }
+
+table tbody tr {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+table tbody tr td{
+  border-right: 1px solid #000;
+}
   </style>
   <div id="modal-container">
     <div class="modal-background">
       <div class="modal">
           <div class="wrap" style="  scrollbar-color: red yellow;">
             <div class="count_wrap">
+              <div class="header">
+                <img src="./img/248665212_1036225107231410_5392557891891390226_n.png" alt="">
+                <span class="header_title">
+                  Republic of the Philippines Department of Education
+                </span>
+              </div>
               <div class="counter">
                 <div class="code">No.: <span>number</span></div>
               </div>
@@ -111,11 +129,9 @@
                   <div class="sign_wrap">
                     <span>
                       <div class="line">
-                        <div class="name">
-                          ANGELITA P. CORNEJO
+                        <div class="reqemployee">
                         </div>
-                        <div class="pos">
-                          Chief, QAD
+                        <div class="reqpos pos">
                         </div>
                       </div> 
                       Name and Signature of Requesting Employee
@@ -175,7 +191,7 @@
 
 
 <div class="mainn mb-5">
-  <div class="form_container container mt-5 p-4">
+  <div class="form_container container mb-4 mt-5 p-4">
     <div class="header d-flex align-items-center mb-5">
       <h3>Travel Authority fill up form</h3>
       <!-- <div id="five" class="button btn">Meep Meep</div> -->
@@ -188,42 +204,51 @@
           <div class="row">
 
               <div class="mb-3 col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Name</label>
+                <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
                 <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
               </div>
               <div class="mb-3 col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Position/Designation</label>
+                <label for="position" class="form-label">Position/Designation</label>
                 <input type="text" class="form-control" id="position" aria-describedby="emailHelp">
               </div>
               <div class="mb-3 col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Permanent Station</label>
+                <label for="permanentStation" class="form-label">Permanent Station</label>
                 <input type="text" class="form-control" id="permanentStation" aria-describedby="emailHelp">
               </div>
               <div class="mb-3 col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Purpose of Travel</label>
+                <label for="purpose" class="form-label">Purpose of Travel</label>
                 <input type="text" class="form-control" id="purpose" aria-describedby="emailHelp">
               </div>
               <div class="mb-3 col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Host of Activity</label>
+                <label for="house" class="form-label">Host of Activity</label>
                 <input type="text" class="form-control" id="house" aria-describedby="emailHelp">
               </div>
               <div class="mb-3 col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Inclusive Dates</label>
-                <input type="text" class="form-control" id="inclusive" aria-describedby="emailHelp">
+                <label for="inclusive" class="form-label">Inclusive Dates</label>
+                <input type="date" class="form-control" id="inclusive" aria-describedby="emailHelp">
               </div>
               <div class="mb-3 col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Destination</label>
+                <label for="destination" class="form-label">Destination</label>
                 <input type="text" class="form-control" id="destination" aria-describedby="emailHelp">
               </div>
               <div class="mb-3 col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Fund Source</label>
+                <label for="funds" class="form-label">Fund Source</label>
                 <input type="text" class="form-control" id="funds" aria-describedby="emailHelp">
               </div>
               <div class="mb-3 col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Date</label>
-                <input type="text" class="form-control" id="date" aria-describedby="emailHelp">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" class="form-control" id="date" aria-describedby="emailHelp">
               </div>
+              <div class="mb-3 col-md-6">
+                <label for="req" class="form-label">Requesting Employee</label>
+                <input type="text" class="form-control" id="req" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3 col-md-6">
+                <label for="req" class="form-label">Requesting Employee Position</label>
+                <input type="text" class="form-control" id="reqpos" aria-describedby="emailHelp">
+              </div>
+ 
               <div class="button_container col-md-12 d-flex mt-5 justify-content-center align-items-center">
                   <button type="submit" class="col-md-6 btn btn-primary">Submit</button>
 
@@ -231,6 +256,7 @@
           </div>
         </form>
   </div>
+
 
 </div>
     <script>
@@ -247,20 +273,36 @@
     </script>
     <script>
 
+        var options = { year: 'numeric', month: 'long', day: 'numeric' };
+        var today = new Date();
+
+        // console.log(today.toLocaleDateString("en-US", options));
+
         const formsubmit = document.querySelector('#formsubmit')
         const preview = document.querySelector('.preview')
 
+        
         preview.addEventListener('click', () => {
+          let inclusivedate = formsubmit['inclusive'].value
+          var newinclusivedate = new Date(`${inclusivedate}`)
+          const finalDate = newinclusivedate.toLocaleDateString("en-US", options)
           document.querySelector('.names').innerHTML = formsubmit['name'].value
           document.querySelector('.pos').innerHTML = formsubmit['position'].value
           document.querySelector('.permanentStation').innerHTML = formsubmit['permanentStation'].value
           document.querySelector('.purpose').innerHTML = formsubmit['purpose'].value
           document.querySelector('.house').innerHTML = formsubmit['house'].value
-          document.querySelector('.inclusive').innerHTML = formsubmit['inclusive'].value
+          document.querySelector('.inclusive').innerHTML = finalDate
           document.querySelector('.destination').innerHTML = formsubmit['destination'].value
           document.querySelector('.fund').innerHTML = formsubmit['funds'].value
+          document.querySelector('.reqemployee').innerHTML = formsubmit['req'].value
+          document.querySelector('.reqpos').innerHTML = formsubmit['reqpos'].value
           document.querySelectorAll('.date').forEach(i => {
-            i.innerHTML = formsubmit['date'].value
+            let date = formsubmit['date'].value
+            var newdate = new Date(`${date}`)
+            const finalDate = newdate.toLocaleDateString("en-US", options)
+            
+
+            i.innerHTML = finalDate
           })
           
           
@@ -275,16 +317,25 @@
 
         formsubmit.addEventListener('submit', (e) => {
             e.preventDefault();
+            let date = formsubmit['date'].value
+            var newdate = new Date(`${date}`)
+            const finalDate = newdate.toLocaleDateString("en-US", options)
+
+            let inclusivedate = formsubmit['inclusive'].value
+            var newinclusivedate = new Date(`${inclusivedate}`)
+            const finalInclusiveDate = newinclusivedate.toLocaleDateString("en-US", options)
             window.sessionStorage.setItem( 'pdfinfo-cached', JSON.stringify({
                     name: formsubmit['name'].value,
                     position: formsubmit['position'].value,
                     permanentStation: formsubmit['permanentStation'].value,
                     purposeOfTravel: formsubmit['purpose'].value,
                     hostofact: formsubmit['house'].value,
-                    inclusiveDates: formsubmit['inclusive'].value,
+                    inclusiveDates: finalInclusiveDate,
                     destination: formsubmit['destination'].value,
                     fundSource: formsubmit['funds'].value,
-                    date: formsubmit['date'].value
+                    req: formsubmit['req'].value,
+                    reqpos: formsubmit['reqpos'].value,
+                    date: finalDate
             }));
             window.location.href = "./result.html"
             
