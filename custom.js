@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			let base64image = canvas.toDataURL('image/png');
 			// console.log(base64image);
 			let pdf = new jsPDF('p', 'px', [1600, 1331]);
-			pdf.addImage(base64image, 'PNG', 145, 105,1030, 1400);
+			pdf.addImage(base64image, 'PNG', 185, 15,970, 1500);
 			// pdf.addImage(base64image, 'PNG', 245, 205,830, 900);
 			// pdf.addImage(base64image, 'PNG', 15, 15, 1110, 360);
 
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			let base64image = canvas.toDataURL('image/png');
 			// console.log(base64image);
 			let pdf = new jsPDF('p', 'px', [1600, 1331]);
-			pdf.addImage(base64image, 'PNG', 145, 105,1030, 1400);
+			pdf.addImage(base64image, 'PNG', 185, 15,970, 1500);
 
 
 			pdf.save('webtylepress-two.pdf');

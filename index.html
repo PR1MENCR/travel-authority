@@ -62,7 +62,7 @@ table tbody tr {
     grid-template-columns: 240px 1fr;
     border-top: 1px solid #000;
     border-left: 1px solid #000;
-    border-right: 1px solid #000;
+    /* border-right: 1px solid #000; */
 }
 table tbody tr td{
   border-right: 1px solid #000;
@@ -72,6 +72,7 @@ table tbody tr td{
     <div class="modal-background">
       <div class="modal">
           <div class="wrap" style="  scrollbar-color: red yellow;">
+            <div class="annex ">ANNEX A</div>
             <div class="count_wrap">
               <div class="header">
                 <img src="./img/248665212_1036225107231410_5392557891891390226_n.png" alt="">
@@ -136,7 +137,7 @@ table tbody tr td{
                       </div> 
                       Name and Signature of Requesting Employee
                     </span>	
-                    <span><div class="line date"></div> Date</span>	
+                    <span><div class="line date"></div>Date of Application</span>	
                   </div>
                 </td>
                 </tr>
@@ -156,7 +157,7 @@ table tbody tr td{
                       </div> 
                       Name and Signature of Requesting Employee
                     </span>	
-                    <span><div class="line date"></div> Date</span>	
+                    <span><div class="line date"></div>Date of Application</span>	
                   </div>
                 </td>
                 </tr>
@@ -176,7 +177,7 @@ table tbody tr td{
                       </div> 
                       Name and Signature of Requesting Employee
                     </span>	
-                    <span><div class="line date"></div> Date</span>	
+                    <span><div class="line date"></div>Date of Application</span>	
                   </div>
                 </td>
                 </tr>
@@ -202,57 +203,73 @@ table tbody tr td{
     </div>
       <form id="formsubmit" action="post">
           <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-8">
 
-              <div class="mb-3 col-md-6">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
-                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="position" class="form-label">Position/Designation</label>
-                <input type="text" class="form-control" id="position" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="permanentStation" class="form-label">Permanent Station</label>
-                <input type="text" class="form-control" id="permanentStation" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="purpose" class="form-label">Purpose of Travel</label>
-                <input type="text" class="form-control" id="purpose" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="house" class="form-label">Host of Activity</label>
-                <input type="text" class="form-control" id="house" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="inclusive" class="form-label">Inclusive Dates</label>
-                <input type="date" class="form-control" id="inclusive" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="destination" class="form-label">Destination</label>
-                <input type="text" class="form-control" id="destination" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="funds" class="form-label">Fund Source</label>
-                <input type="text" class="form-control" id="funds" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="date" class="form-label">Date</label>
-                <input type="date" class="form-control" id="date" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="req" class="form-label">Requesting Employee</label>
-                <input type="text" class="form-control" id="req" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="req" class="form-label">Requesting Employee Position</label>
-                <input type="text" class="form-control" id="reqpos" aria-describedby="emailHelp">
+                <div class="mb-3 w-100">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                  <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                </div>
+                <div class="mb-3 w-100">
+                  <label for="position" class="form-label">Position/Designation</label>
+                  <input type="text" class="form-control" id="position" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3 w-100">
+                  <label for="permanentStation" class="form-label">Permanent Station</label>
+                  <input type="text" class="form-control" id="permanentStation" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3 w-100">
+                  <label for="purpose" class="form-label">Purpose of Travel</label>
+                  <input type="text" class="form-control" id="purpose" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3 w-100">
+                  <label for="house" class="form-label">Host of Activity</label>
+                  <select id="house" class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="ASD">ASD</option>
+                    <option value="CLMD">CLMD</option>
+                    <option value="ESSD">ESSD</option>
+                    <option value="Finance Division">Finance Division</option>
+                    <option value="FTAD">FTAD</option>
+                    <option value="HRDD & NEAP-R">HRDD & NEAP-R</option>
+                    <option value="PPRD">PPRD</option>
+                    <option value="QAD">QAD</option>
+                  </select>
+                </div>
+                <div class="mb-3 w-100">
+                  <label  class="form-label">Inclusive Dates</label>
+                  <div class="fromto_wrap ps-3">
+                    <label for="from" class="form-label">From</label>
+                    <input type="date" class="form-control" id="from" aria-describedby="emailHelp">
+                    <label for="to" class="form-label">To</label>
+                    <input type="date" class="form-control" id="to" aria-describedby="emailHelp">
+                  </div>
+                </div>
+                <div class="mb-3 w-100">
+                  <label for="destination" class="form-label">Destination</label>
+                  <input type="text" class="form-control" id="destination" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3 w-100">
+                  <label for="funds" class="form-label">Fund Source</label>
+                  <input type="text" class="form-control" id="funds" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3 w-100">
+                  <label for="date" class="form-label">Date</label>
+                  <input type="date" class="form-control" id="date" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3 w-100">
+                  <label for="req" class="form-label">Requesting Employee</label>
+                  <input type="text" class="form-control" id="req" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3 w-100">
+                  <label for="req" class="form-label">Requesting Employee Position</label>
+                  <input type="text" class="form-control" id="reqpos" aria-describedby="emailHelp">
+                </div>
+                  <button type="submit" class="w-100 btn btn-primary">Submit</button>
               </div>
  
-              <div class="button_container col-md-12 d-flex mt-5 justify-content-center align-items-center">
-                  <button type="submit" class="col-md-6 btn btn-primary">Submit</button>
-
-              </div>
+        
           </div>
         </form>
   </div>
@@ -281,17 +298,42 @@ table tbody tr td{
         const formsubmit = document.querySelector('#formsubmit')
         const preview = document.querySelector('.preview')
 
+        const selectdateinput1 = document.querySelector('#from')
+
+
+
+ 
+        selectdateinput1.addEventListener('change', () => {
+          const dateinput11 = document.querySelector('#from').value
+
+          var dateinput1 = new Date(dateinput11);
+          var dd = String(dateinput1.getDate()).padStart(2, '0');
+          var mm = String(dateinput1.getMonth() + 1).padStart(2, '0');
+          var yyyy = dateinput1.getFullYear();
+
+          dateinput1 = yyyy + '-' + mm + '-' + dd;
+          $('#to').attr('min',dateinput1);
+        })
         
         preview.addEventListener('click', () => {
-          let inclusivedate = formsubmit['inclusive'].value
-          var newinclusivedate = new Date(`${inclusivedate}`)
-          const finalDate = newinclusivedate.toLocaleDateString("en-US", options)
+          let from = formsubmit['from'].value
+          let to = formsubmit['to'].value
+          let dateofapp = formsubmit['date'].value
+        
+          var frominclusivedate = new Date(`${from}`)
+          var toinclusivedate = new Date(`${to}`)
+          var dateofappstring = new Date(`${dateofapp}`)
+
+          const fromDate = frominclusivedate.toLocaleDateString("en-US", options)
+          const toDate = toinclusivedate.toLocaleDateString("en-US", options)
+          const inclusiveDates = `${fromDate} to ${toDate}`;
+          const finalDate = dateofappstring.toLocaleDateString("en-US", options)
           document.querySelector('.names').innerHTML = formsubmit['name'].value
           document.querySelector('.pos').innerHTML = formsubmit['position'].value
           document.querySelector('.permanentStation').innerHTML = formsubmit['permanentStation'].value
           document.querySelector('.purpose').innerHTML = formsubmit['purpose'].value
           document.querySelector('.house').innerHTML = formsubmit['house'].value
-          document.querySelector('.inclusive').innerHTML = finalDate
+          document.querySelector('.inclusive').innerHTML = inclusiveDates
           document.querySelector('.destination').innerHTML = formsubmit['destination'].value
           document.querySelector('.fund').innerHTML = formsubmit['funds'].value
           document.querySelector('.reqemployee').innerHTML = formsubmit['req'].value
@@ -317,20 +359,25 @@ table tbody tr td{
 
         formsubmit.addEventListener('submit', (e) => {
             e.preventDefault();
-            let date = formsubmit['date'].value
-            var newdate = new Date(`${date}`)
-            const finalDate = newdate.toLocaleDateString("en-US", options)
+            let from = formsubmit['from'].value
+          let to = formsubmit['to'].value
+          let dateofapp = formsubmit['date'].value
+        
+          var frominclusivedate = new Date(`${from}`)
+          var toinclusivedate = new Date(`${to}`)
+          var dateofappstring = new Date(`${dateofapp}`)
 
-            let inclusivedate = formsubmit['inclusive'].value
-            var newinclusivedate = new Date(`${inclusivedate}`)
-            const finalInclusiveDate = newinclusivedate.toLocaleDateString("en-US", options)
+          const fromDate = frominclusivedate.toLocaleDateString("en-US", options)
+          const toDate = toinclusivedate.toLocaleDateString("en-US", options)
+          const inclusiveDates = `${fromDate} to ${toDate}`;
+          const finalDate = dateofappstring.toLocaleDateString("en-US", options)
             window.sessionStorage.setItem( 'pdfinfo-cached', JSON.stringify({
                     name: formsubmit['name'].value,
                     position: formsubmit['position'].value,
                     permanentStation: formsubmit['permanentStation'].value,
                     purposeOfTravel: formsubmit['purpose'].value,
                     hostofact: formsubmit['house'].value,
-                    inclusiveDates: finalInclusiveDate,
+                    inclusiveDates: inclusiveDates,
                     destination: formsubmit['destination'].value,
                     fundSource: formsubmit['funds'].value,
                     req: formsubmit['req'].value,

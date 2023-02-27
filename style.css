@@ -1,3 +1,7 @@
+body{
+    background: #fff !important;
+}
+
 .main{
     width: 100%;
     /* max-width: 900px; */
@@ -12,7 +16,18 @@
 .title{
     margin-bottom: 30px;
 }
-
+.wrap{
+    position: relative;
+    padding-top: 100px;
+}
+.wrap .annex{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
 .count_wrap{
     display: flex;
     align-items: flex-start;
@@ -22,10 +37,16 @@
 }
 .count_wrap .counter{
     border: 2px solid #000;
-    padding: 10px 20px;
+    padding: 10px 9px;
     justify-self: flex-end;
     position: absolute;
+    width: 180px;
+    height:65px;
     right: 0;
+    padding-bottom: 2px;
+    display: flex;
+    align-items: flex-end;
+    font-size: 20px;
 }
 
 .count_wrap .counter .code span{
@@ -44,14 +65,15 @@
     flex: 1;
 }
 .count_wrap .header img{
-    height: auto;
-    width: 120px;
+    height: 170px;
+    width: 150px;
     margin-bottom: 10px;
 }
 .count_wrap .header .header_title{
     font-weight: bold;
     text-align: center;
-    font-family: 'Cambo', serif;
+    font-family: "Bookman Old Style", Georgia, serif;
+    font-size: 18px;
 }
 table, td, th {
 border: 1px solid;
@@ -63,7 +85,8 @@ border-collapse: collapse;
 }
 table tbody tr{
 display: grid;
-grid-template-columns: 240px 1fr;
+grid-template-columns: 260px 1fr;
+border-top: 1px solid #000;
 /* border: 0.1rem solid #000; */
 }
 table tbody tr td{
@@ -112,22 +135,32 @@ table tbody tr .sign .sign_wrap .dates{
 table tbody tr .sign .sign_wrap span .line{
     height: auto;
     background: none;
-    border-bottom: 3px solid #000;
+    border-bottom: 2px solid #000;
     text-align: center;
     justify-content: center;
     flex-direction: column;
+    padding-bottom: 5px;
 }
 table tbody tr .sign .sign_wrap span .line .pos{
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
+}
+.table td {
+    text-align:left;
 }
 table .bold{
 font-weight: bold;
-font-size: 20px;
+font-size: 22px;
+}
+table .bold span{
+    font-weight: 500;
+    font-size: 19px;
 }
 .main h3{
 text-align: center;
-font-size: 25px;
+font-size: 28px;
+font-weight: bold;
+font-family: Cambria, Georgia, serif;font-style: normal; font-variant: normal;
 }
 .btn_wrapp{
 width: 100%;
@@ -141,7 +174,18 @@ margin: 0 auto;
 }
 table tbody tr:nth-child(1){
     border-top: 1px solid #000;
+
 }
+table tbody tr td:nth-child(2){
+    font-size: 20px;
+}
+table tbody tr .bold{
+    font-family: Cambria, Georgia, serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; 
+}
+table tbody tr .sign .sign_wrap span .line .name{
+    font-size: 22px;
+}
+
 /* 
 .table td, .table th {
     padding: 0.75rem;
