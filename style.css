@@ -48,7 +48,6 @@ body{
     align-items: flex-end;
     font-size: 20px;
 }
-
 .count_wrap .counter .code span{
     text-decoration: underline;
     font-weight: 600;
@@ -187,6 +186,11 @@ table tbody tr .sign .sign_wrap span .line .name{
     font-size: 22px;
 }
 
+.modal .numberEdit{
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+}
 /* 
 .table td, .table th {
     padding: 0.75rem;
