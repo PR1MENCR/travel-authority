@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.querySelector('#btn-two').addEventListener('click', () => {
 		html2canvas(document.querySelector('#content')).then((canvas) => {
 			let base64image = canvas.toDataURL('image/png');
+			base64image.crossOrigin="anonymous"
 			// console.log(base64image);
 			let pdf = new jsPDF('p', 'px', [1600, 1331]);
 			pdf.addImage(base64image, 'PNG', 185, 15,970, 1500);
