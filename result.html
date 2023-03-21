@@ -28,14 +28,136 @@
 	</head>
 	<body style="background: #fff !important;">
 		<div class="container pb-5 pt-5">
-			<div class="btn_wrapp d-flex">
+			<!-- <div class="btn_wrapp d-flex">
 				<button id="btn-edit" class="btn btn-primary btn-lg mr-2"
 				>BACK</button
 			>
+			</div> -->
 
-			</div>
 			<div id="content" class="main">
-		
+				<div class="wrap" id="wrap_replica">
+					<div class="annex">ANNEX A</div>
+					<div class="count_wrap">
+						<div class="header">
+							<img src="./img/248665212_1036225107231410_5392557891891390226_n.png" alt="">
+							<span class="header_title">
+								Republic of the Philippines Department of Education
+							</span>
+						</div>
+						<div class="counter">
+							<div class="code">No.: <span></span></div>
+						</div>
+					</div>
+							<div class="title">
+						<h3>TRAVEL AUTHORITY FOR OFFICIAL TRAVEL</h3>
+					</div>
+					<table id="demo" class="table ">
+						<tbody>
+						  <tr>
+							<td class="bold">NAME</td>
+							<td>
+								
+							</td>
+						  </tr>
+						  <tr>
+							<td class="bold">Position/Designation</td>
+							<td></td>
+						  </tr>
+						  <tr>
+							<td class="bold">Permanent Station</td>
+							<td></td>
+						  </tr>
+						  <tr>
+							<td class="bold d-flex flex-column">
+								Purpose of Travel
+								<span>(must be supported by attachments)</span>	
+							</td>
+							<td>
+								
+						
+							</td>
+						  </tr>
+						  <tr>
+							<td class="bold">Host of Activity</td>
+							<td></td>
+						  </tr>
+						  <tr>
+							<td class="bold">Inclusive Dates</td>
+							<td></td>
+						  </tr>
+						  <tr>
+							<td class="bold">Destination</td>
+							<td></td>
+						  </tr>
+						  <tr>
+							<td class="bold">Fund Source</td>
+							<td></td>
+						  </tr>
+						  <tr>
+							<td class=" sign">
+								<i>I hereby attest that the information in this form and in the supporting documents attached hereto are tru and correct</i>
+	
+								<div class="sign_wrap">
+									<span>
+										<div class="line">
+											<div class="name">
+												
+											</div>
+											<div class="pos">
+												
+											</div>
+										</div> 
+										Name and Signature of Requesting Employee
+									</span>	
+									<span><div class="line"></div> Date of Application</span>	
+								</div>
+							</td>
+						  </tr>
+						  <tr>
+							<td class=" sign">
+								<i>I hereby attest that the information in this form and in the supporting documents attached hereto are tru and correct</i>
+	
+								<div class="sign_wrap">
+									<span>
+										<div class="line">
+											<div class="name">
+												RITA E. RIDDLE, CESO V
+											</div>
+											<div class="pos">
+												Schools Division Superintendent and concurrent Officer-In-Charge Office of the Assistant Regional Director
+											</div>
+										</div> 
+										Name and Signature of Recommending Authority
+									</span>	
+									<span><div class="line"></div> Date of Application</span>	
+								</div>
+							</td>
+						  </tr>
+						  <tr>
+							<td class=" sign">
+								<strong>APPROVED:</strong>
+	
+								<div class="sign_wrap">
+									<span>
+										<div class="line">
+											<div class="name">
+												WILFREDO E. CABRAL, CESO III
+											</div>
+											<div class="pos">
+												Schools Division Superintendent and concurrent Officer-In-Charge Office of the Assistant Regional Director
+											</div>
+										</div> 
+										Name and Signature of Approving Authority
+									</span>	
+									<span><div class="line"></div> Date of Application</span>	
+								</div>
+							</td>
+						  </tr>
+					
+				
+						</tbody>
+					  </table>
+				</div>
 			</div>
 
 			<br />
@@ -44,11 +166,11 @@
 				>Print & Generate PDF</button
 			> -->
 				<div class="btn_wrapp d-flex">
-					<button id="btn-one" class="btn btn-success btn-lg mr-2"
+					<!-- <button id="btn-one" class="btn btn-success btn-lg mr-2"
 						>PRINT</button
-					>
+					> -->
 					<button id="btn-two" class="btn btn-success btn-lg mr-2"
-						>EXPORT</button
+						>DOWNLOAD</button
 					>
 					<button id="btn-back" class="btn btn-primary btn-lg mr-2"
 						>NEW TRAVEL AUTHORITY</button
@@ -110,8 +232,10 @@
 		<script>
 			function ready(){
 
-			
-			 var cached = JSON.parse(window.sessionStorage.getItem('pdfinfo-cached'));
+				if (sessionStorage.getItem("pdfinfo-cached") != null) {
+					document.querySelector('#wrap_replica').style.display="none"
+					
+					var cached = JSON.parse(window.sessionStorage.getItem('pdfinfo-cached'));
 			 const wrap = document.querySelector('.wrap')
 			 function renderResult(doccached){
 				db.collection('pdfcounter').onSnapshot(snapshot => {
@@ -144,7 +268,7 @@
 						</span>
 					</div>
 					<div class="counter">
-						<div class="code">No.: <span>${doc.data().count}</span></div>
+						<div class="code">No.: <span class="num">${doc.data().count}</span></div>
 					</div>
 				</div>
 						<div class="title">
@@ -270,6 +394,12 @@
 
 				renderResult(cached)
 			}
+
+			}else{
+				document.querySelector('#wrap_replica').style.display="block"
+			}
+
+	
 			}
 			ready();
 		</script>
