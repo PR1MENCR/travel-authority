@@ -64,6 +64,9 @@ table tbody tr {
     border-left: 1px solid #000;
     /* border-right: 1px solid #000; */
 }
+table tbody.modal tr{
+  grid-template-columns: 280px 1fr;
+}
 table tbody tr td{
   border-right: 1px solid #000;
 }
@@ -88,7 +91,7 @@ table tbody tr td{
               <h3>TRAVEL AUTHORITY FOR OFFICIAL TRAVEL</h3>
             </div>
             <table id="demo" class="table ">
-              <tbody>
+              <tbody class="modal">
                 <tr>
                 <td class="bold">NAME</td>
                 <td class="names">
@@ -193,98 +196,101 @@ table tbody tr td{
 
 <div class="mainn mb-5">
   <div class="form_container container mb-4 mt-5 p-4">
-    <div class="header d-flex align-items-center mb-5">
-      <h3>Travel Authority fill up form</h3>
-      <!-- <div id="five" class="button btn">Meep Meep</div> -->
-      <div id="one" class="button preview btn ms-auto d-flex align-items-center">
-        <i  class="fa fa-info-circle button " aria-hidden="true" style="font-size: 30px; color: rgb(0, 132, 255); cursor: pointer;"></i>
-        <p class="m-0 ms-2" style="font-weight:500;">Preview</p>
+    <div class="row">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-8">
+        <div class="header d-flex align-items-center mb-5">
+          <h3>Travel Authority fill up form</h3>
+          <!-- <div id="five" class="button btn">Meep Meep</div> -->
+          <div id="one" class="button preview btn ms-auto d-flex align-items-center">
+            <i  class="fa fa-info-circle button " aria-hidden="true" style="font-size: 30px; color: rgb(0, 132, 255); cursor: pointer;"></i>
+            <p class="m-0 ms-2" style="font-weight:500;">Preview</p>
+          </div>
+        </div>
+          <form id="formsubmit" action="post">
+              <div class="">
+                    <div class="col-md-6 mb-3">
+                      <label for="name" class="form-label">Name</label>
+                      <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="position" class="form-label">Position/Designation</label>
+                      <input type="text" class="form-control" id="position" aria-describedby="emailHelp">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="permanentStation" class="form-label">Permanent Station</label>
+                      <select id="permanentStation" class="form-select" aria-label="Default select example">
+                        <option selected>Select</option>
+                        <option value="ASD">ASD</option>
+                        <option value="CLMD">CLMD</option>
+                        <option value="ESSD">ESSD</option>
+                        <option value="Finance Division">Finance Division</option>
+                        <option value="FTAD">FTAD</option>
+                        <option value="HRDD & NEAP-R">HRDD & NEAP-R</option>
+                        <option value="PPRD">PPRD</option>
+                        <option value="QAD">QAD</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="purpose" class="form-label">Purpose of Travel</label>
+                      <input type="text" class="form-control" id="purpose" aria-describedby="emailHelp">
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <label for="house" class="form-label">Host of Activity</label>
+                      <select id="house" class="form-select" aria-label="Default select example">
+                        <option selected>Select</option>
+                        <option value="ASD">ASD</option>
+                        <option value="CLMD">CLMD</option>
+                        <option value="ESSD">ESSD</option>
+                        <option value="Finance Division">Finance Division</option>
+                        <option value="FTAD">FTAD</option>
+                        <option value="HRDD & NEAP-R">HRDD & NEAP-R</option>
+                        <option value="PPRD">PPRD</option>
+                        <option value="QAD">QAD</option>
+                      </select>
+                    </div>
+                    <div class="mb-4 w-100">
+                      <label  class="form-label">Inclusive Dates</label>
+                      <div class="fromto_wrap row">
+                        <div class="col-md-6 d-flex justify-content-start align-items-center">
+                          <label for="from" class="form-label me-2 mb-0">From</label>
+                          <input type="date" class="form-control" id="from" aria-describedby="emailHelp">
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                          <label for="to" class="form-label me-2 mb-0">To</label>
+                          <input type="date" class="form-control" id="to" aria-describedby="emailHelp">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3 w-100">
+                      <label for="destination" class="form-label">Destination</label>
+                      <input type="text" class="form-control" id="destination" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3 col-md-6">
+                      <label for="funds" class="form-label">Fund Source</label>
+                      <input type="text" class="form-control" id="funds" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3 col-md-6">
+                      <label for="date" class="form-label">Date</label>
+                      <input type="date" class="form-control" id="date" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3 col-md-6">
+                      <label for="req" class="form-label">Requesting Employee</label>
+                      <input type="text" class="form-control" id="req" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3 col-md-6">
+                      <label for="req" class="form-label">Requesting Employee Position</label>
+                      <input type="text" class="form-control" id="reqpos" aria-describedby="emailHelp">
+                    </div>
+                      <button type="submit" class="w-100 btn btn-primary">Submit</button>
+              </div>
+            </form>
       </div>
     </div>
-      <form id="formsubmit" action="post">
-          <div class="row">
-              <div class="col-md-4"></div>
-              <div class="col-md-8">
-                <div class="col-md-6 mb-3">
-                  <label for="name" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
-                  <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="position" class="form-label">Position/Designation</label>
-                  <input type="text" class="form-control" id="position" aria-describedby="emailHelp">
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="permanentStation" class="form-label">Permanent Station</label>
-                  <select id="permanentStation" class="form-select" aria-label="Default select example">
-                    <option selected>Select</option>
-                    <option value="ASD">ASD</option>
-                    <option value="CLMD">CLMD</option>
-                    <option value="ESSD">ESSD</option>
-                    <option value="Finance Division">Finance Division</option>
-                    <option value="FTAD">FTAD</option>
-                    <option value="HRDD & NEAP-R">HRDD & NEAP-R</option>
-                    <option value="PPRD">PPRD</option>
-                    <option value="QAD">QAD</option>
-                  </select>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="purpose" class="form-label">Purpose of Travel</label>
-                  <input type="text" class="form-control" id="purpose" aria-describedby="emailHelp">
-                </div>
-                <div class="col-md-6 mb-4">
-                  <label for="house" class="form-label">Host of Activity</label>
-                  <select id="house" class="form-select" aria-label="Default select example">
-                    <option selected>Select</option>
-                    <option value="ASD">ASD</option>
-                    <option value="CLMD">CLMD</option>
-                    <option value="ESSD">ESSD</option>
-                    <option value="Finance Division">Finance Division</option>
-                    <option value="FTAD">FTAD</option>
-                    <option value="HRDD & NEAP-R">HRDD & NEAP-R</option>
-                    <option value="PPRD">PPRD</option>
-                    <option value="QAD">QAD</option>
-                  </select>
-                </div>
-                <div class="mb-4 w-100">
-                  <label  class="form-label">Inclusive Dates</label>
-                  <div class="fromto_wrap row">
-                    <div class="col-md-6 d-flex justify-content-start align-items-center">
-                      <label for="from" class="form-label me-2">From</label>
-                      <input type="date" class="form-control" id="from" aria-describedby="emailHelp">
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-center align-items-center">
-                      <label for="to" class="form-label me-2">To</label>
-                      <input type="date" class="form-control" id="to" aria-describedby="emailHelp">
-                    </div>
-                  </div>
-                </div>
-                <div class="mb-3 w-100">
-                  <label for="destination" class="form-label">Destination</label>
-                  <input type="text" class="form-control" id="destination" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3 col-md-6">
-                  <label for="funds" class="form-label">Fund Source</label>
-                  <input type="text" class="form-control" id="funds" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3 col-md-6">
-                  <label for="date" class="form-label">Date</label>
-                  <input type="date" class="form-control" id="date" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3 col-md-6">
-                  <label for="req" class="form-label">Requesting Employee</label>
-                  <input type="text" class="form-control" id="req" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3 col-md-6">
-                  <label for="req" class="form-label">Requesting Employee Position</label>
-                  <input type="text" class="form-control" id="reqpos" aria-describedby="emailHelp">
-                </div>
-                  <button type="submit" class="w-100 btn btn-primary">Submit</button>
-              </div>
- 
-        
-          </div>
-        </form>
+
   </div>
 
 
