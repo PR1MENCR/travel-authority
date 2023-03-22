@@ -197,3 +197,53 @@ table tbody tr .sign .sign_wrap span .line .name{
     vertical-align: top;
     border-top: unset;
 } */
+
+.btn{
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
+    outline: none;
+}
+.btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+
+  }
+.btn:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px !important;
+}
+#btn-two{
+    background: #33663e;
+}
+#btn-two{
+    background: #1b57ff;
+}
+
+
+.listofSubmitted{
+    height: 50px;
+    width: 120px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    outline: none;
+    background: rgb(228, 213, 0) !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px !important;
+    border: 1px solid #1c08ca !important;
+    font-weight:500 !important;
+}
+
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}
