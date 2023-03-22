@@ -24,6 +24,10 @@
           border-right: 2px solid #999;
           padding-left: 20px;
           padding-right: 20px;
+          text-align: center;
+}
+.table .tbody tr td{
+    border-right: 1px solid #999;
 }
     </style>
     <div class="main">
@@ -35,7 +39,7 @@
                     <thead class="table-dark" style="white-space:nowrap;">
                         <tr style="white-space:nowrap;" >
                             <th scope="col">Number</th>
-                            <th scope="col">Name</th>
+                            <th scope="col" >Name</th>
                             <th scope="col">Position</th>
                             <th scope="col">Permanent Station</th>
                             <th scope="col">Purpose of Travel</th>
@@ -77,12 +81,12 @@
             let divHTML = `
             <tr class="wrap">
                 <td>${list.data().number}</td>
-                <td>${list.data().name}</td>
-                <td>${list.data().position}</td>
+                <td style="white-space:nowrap !important; ">${list.data().name}</td>
+                <td style="white-space:nowrap !important; ">${list.data().position}</td>
                 <td>${list.data().permanentStation}</td>
-                <td>${list.data().purposeOfTravel}</td>
+                <td style="white-space:nowrap !important; ">${list.data().purposeOfTravel}</td>
                 <td>${list.data().hostofact}</td>
-                <td>${list.data().inclusiveDates}</td>
+                <td style="white-space:nowrap !important; ">${list.data().inclusiveDates}</td>
                 <td>${list.data().destination}</td>
                 <td>${list.data().fundSource}</td>
                 <td>${list.data().req}</td>
