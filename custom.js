@@ -63,8 +63,13 @@ document.addEventListener('DOMContentLoaded', function () {
 // 	});
 
 
+
+if(document.querySelector('.num') == ""){
+	btntwo.style.pointerEvents = 'none'
+}
 	document.querySelector('#btn-two').addEventListener('click', () => {
 		html2canvas(document.querySelector('#content')).then((canvas) => {
+		
 			let base64image = canvas.toDataURL('image/png');
 			base64image.crossOrigin="anonymous"
 			// console.log(base64image);
@@ -88,8 +93,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			})
 
 		});
-	})
-	document.querySelector('#btn-back').addEventListener('click', () => {
+	} , {once : true})
+	document.querySelector('#btn-back').addEventListener('click', (event) => {
 
 		db.collection('pdfcounter').onSnapshot(snapshot => {
 			let changes = snapshot.docChanges();
@@ -119,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 
 
-	})
+	} , {once : true})
 	// document.querySelector('#btn-edit').addEventListener('click', () => {
 	// 	window.location.href = './index.html'
 	// })

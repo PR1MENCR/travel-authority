@@ -239,6 +239,7 @@
 					var cached = JSON.parse(window.sessionStorage.getItem('pdfinfo-cached'));
 			 const wrap = document.querySelector('.wrap')
 			 function renderResult(doccached){
+				console.log(doccached)
 				db.collection('pdfcounter').onSnapshot(snapshot => {
 					let changes = snapshot.docChanges();
 					changes.forEach(change => {
@@ -385,6 +386,8 @@
 				  div.innerHTML = divHTML;
 				  main.appendChild(div)
 				// console.log(doc)
+
+	
 				}
 			 }
 
@@ -398,13 +401,20 @@
 
 			}else{
 				document.querySelector('#wrap_replica').style.display="block"
+				document.querySelector('#btn-two').style.pointerEvents = 'none'
+				document.querySelector('#btn-two').style.background = "#999"
 			}
 
 	
 			}
+
 			ready();
+
+
+
+
 		</script>
-		<script src="./app.js"></script>
+		<!-- <script src="./app.js"></script> -->
 		<script>
 			$('.button').click(function(){
 			var buttonId = $(this).attr('id');
